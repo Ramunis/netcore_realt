@@ -1,0 +1,68 @@
+﻿@{ ViewData["Title"] = "Register";
+
+}
+@model MVCLab2.Models.RegisterModel
+<style>
+    .size {
+        width: 25%;
+        min-width: 250px;
+    }
+</style>
+<img src="~/img/4.png" class="img-fluid" alt="Responsive image">
+<h4> Регистрация в фирме Риелтора</h4>
+
+
+<form asp-action="Register" asp-controller="Home" asp-anti-forgery="true">
+    <div>
+        <label asp-for="Username">Введите Login </label><br>
+        <input class="form-control size" type="text" asp-for="Username" />
+        <span asp-validation-for="Username"></span><br>
+        <label asp-for="PW">
+            Введите пароль
+        </label><br>
+        <input class="form-control size" asp-for="PW" /><br>
+        <span asp-validation-for="PW"></span><br>
+        
+        <label asp-for="ConfirmPassword">
+            Подтвердите пароль
+        </label><br>
+        <input class="form-control size" asp-for="ConfirmPassword" /><br>
+        <span asp-validation-for="ConfirmPassword"></span><br>
+
+        <label asp-for="F">Введите Фамилия </label><br>
+        <input class="form-control size" type="text" asp-for="F" />
+        <span asp-validation-for="F"></span><br>
+
+        <label asp-for="I">Введите Имя </label><br>
+        <input class="form-control size" type="text" asp-for="I" />
+        <span asp-validation-for="I"></span><br>
+
+        <label asp-for="O">Введите Отчество </label><br>
+        <input class="form-control size" type="text" asp-for="O" />
+        <span asp-validation-for="O"></span><br>
+
+        <label asp-for="DR">Введите День Рождения </label><br>
+        <input class="form-control size" type="date" asp-for="DR" />
+        <span asp-validation-for="DR"></span><br>
+
+        <label asp-for="City">Введите Город </label><br>
+        <input class="form-control size" type="text" asp-for="City" />
+        <span asp-validation-for="City"></span><br>
+
+        <label asp-for="Adres">Введите Адрес </label><br>
+        <input class="form-control size" type="text" asp-for="Adres" />
+        <span asp-validation-for="Adres"></span><br>
+
+        <label asp-for="Phone">Введите Телефон </label><br>
+        <input class="form-control size" type="text" asp-for="Phone" />
+        <span asp-validation-for="Phone"></span><br>
+
+        <label asp-for="Phone">Введите Email </label><br>
+        <input class="form-control size" type="email" asp-for="Email" />
+        <span asp-validation-for="Email"></span><br>
+
+        <input type="submit" value="Зарегистрироваться" class="btn btn-sm btn btn-outline-dark" />
+    </div>
+</form>
+<br>
+<br>

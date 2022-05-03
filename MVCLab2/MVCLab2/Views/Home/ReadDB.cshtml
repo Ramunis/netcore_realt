@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Личный кабинет";
+
+
+}
+@model IEnumerable<MVCLab2.Models.Clients>
+
+
+<div class="text-center">
+
+    <h1>Личный кабинет</h1>
+    <img src="~/img/4.png" class="img-fluid" alt="Responsive image">
+    <div class="container">
+        <div id="main">
+            <div class="row" id="real-estates-detail">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="panel panel-default">
+
+                        <table class="table table-th-block">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Фамилия</th>
+                                    <th scope="col">Имя</th>
+                                    <th scope="col">Отчество</th>
+                                    <th scope="col">ДР</th>
+                                    <th scope="col">Город</th>
+                                    <th scope="col">Адрес</th>
+                                    <th scope="col">Телефон</th>
+                                    <th scope="col">Email</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Username</td>
+                                        <td>@item.F</td>
+                                        <td>@item.I</td>
+                                        <td>@item.O</td>
+                                        <td>@item.DR</td>
+                                        <td>@item.City</td>
+                                        <td>@item.Adres</td>
+                                        <td>@item.Phone</td>
+                                        <td>@item.Email</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <div class="come">
+        @Html.ActionLink("Далее", "ComeForm")
+    </div>
+
+</div>
+
+

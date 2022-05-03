@@ -1,0 +1,45 @@
+﻿@{ ViewData["Title"] = "Запись в БД";
+
+}
+@model MVCLab2.Models.Contracts
+<style>
+    .size {
+        width: 25%;
+        min-width: 250px;
+    }
+</style>
+<br>
+<h4>Запись в БД - создание Договора Продажи</h4>
+
+<form asp-action="WriteDB2" asp-controller="Home" asp-anti-forgery="true">
+    <div>
+
+        <label asp-for="District">Выберите район</label><br />
+        <select asp-for="District" asp-items="ViewBag.regions2"></select>
+        <span asp-validation-for="District"></span><br>
+
+        <label asp-for="Sq">Введите Площадь </label><br>
+        <input class="form-control size" type="text" asp-for="Sq" />
+        <span asp-validation-for="Sq"></span><br>
+
+        <label asp-for="DS">Введите Дату Строительства </label><br>
+        <input class="form-control size" type="date" asp-for="DS" />
+        <span asp-validation-for="DS"></span><br>
+
+        <label asp-for="Price">Введите Цену </label><br>
+        <input class="form-control size" type="number" asp-for="Price" />
+        <span asp-validation-for="Price"></span><br>
+
+        <label asp-for="Pay">Введите Оплату </label><br>
+        <input class="form-control size" type="text" asp-for="Pay" />
+        <span asp-validation-for="Pay"></span><br>
+
+        <label asp-for="Repair">Выберите Ремонт </label><br>
+        <input class="form-control size" type="text" asp-for="Repair" />
+        <span asp-validation-for="Repair"></span><br>
+
+        <input type="submit" value="Добавить" class="btn btn-sm btn btn-outline-dark" />
+    </div>
+</form>
+<br>
+<br>

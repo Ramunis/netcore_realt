@@ -1,0 +1,24 @@
+﻿@{ ViewData["Title"] = "Фильтр";
+
+}
+@model MVCLab2.Models.Contracts
+<style>
+    .size {
+        width: 25%;
+        min-width: 250px;
+    }
+</style>
+<br>
+<h4>Фильтрация по Району</h4>
+
+<form asp-action="Rent6" asp-controller="Home" asp-anti-forgery="true">
+    <div>
+
+        <label asp-for="District">Выберите Район</label><br />
+        <select asp-for="District" asp-items="ViewBag.au"></select>
+        <span asp-validation-for="District"></span><br>
+        <input type="submit" value="Поиск" class="btn btn-sm btn btn-outline-dark" />
+    </div>
+</form>
+<br>
+<br>

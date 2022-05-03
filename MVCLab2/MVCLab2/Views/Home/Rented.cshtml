@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Оформление Договора";
+}
+@model IEnumerable<MVCLab2.Models.Contracts>
+
+<div class="text-center">
+    <h1>@ViewBag.Numer</h1>
+    <table class="table table-th-block">
+        <thead>
+            <tr>
+                <th scope="col">ДЗ</th>
+                <th scope="col">Клиент</th>
+                <th scope="col">Реалтор</th>
+                <th scope="col">Район</th>
+                <th scope="col">Услуга</th>
+                <th scope="col">Площадь</th>
+                <th scope="col">ДС</th>
+                <th scope="col">Срок</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Оплата</th>
+                <th scope="col">Ремонт</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.DZ</td>
+                <td>@ViewBag.q1</td>
+                <td>@ViewBag.q2</td>
+                <td>@ViewBag.q3</td>
+                <td>@ViewBag.q4</td>
+                <td>@item.Sq</td>
+                <td>@item.DS</td>
+                <td>@item.Term</td>
+                <td>@item.Price</td>
+                <td>@item.Pay</td>
+                <td>@item.Repair</td>
+
+            </tr>
+            }
+        </tbody>
+        </table>
+
+        <h1>Подтвердите заключение договора</h1>
+        <form method="post">
+
+            <input type="submit" value="Оформить договор" class="btn btn-sm btn btn-outline-dark" />
+        </form>
+</div>

@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Аренда";
+}
+@model IEnumerable<MVCLab2.Models.rentboard>
+
+<div class="text-center">
+    @Html.ActionLink("По району", "Rent5")
+    @Html.ActionLink("Самые дешёвые", "Rent1")
+    @Html.ActionLink("Самые дорогие", "Rent2")
+    @Html.ActionLink("Min площадь", "Rent3")
+    @Html.ActionLink("Max площадь", "Rent4")
+    <h1>Чтение из БД - Просмотр Договоров Аренды</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ДЗ</th>
+                <th scope="col">Клиент</th>
+                <th scope="col">Реалтор</th>
+                <th scope="col">Район</th>
+                <th scope="col">Услуга</th>
+                <th scope="col">Площадь</th>
+                <th scope="col">ДС</th>
+                <th scope="col">Срок</th>
+                <th scope="col">Цена</th>
+                <th scope="col">Оплата</th>
+                <th scope="col">Ремонт</th>
+                <th scope="col"> </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DZ</td>
+                    <td>@item.Clientf</td>
+                    <td>@item.Realtf</td>
+                    <td>@item.District</td>
+                    <td>@item.Servic</td>
+                    <td>@item.Sq</td>
+                    <td>@item.DS</td>
+                    <td>@item.Term</td>
+                    <td>@item.Price</td>
+                    <td>@item.Pay</td>
+                    <td>@item.Repair</td>
+                    <td><a asp-controller="Home" asp-action="Rented" asp-route-id=@item.ID>Купить</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
